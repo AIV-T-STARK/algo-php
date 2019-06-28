@@ -6,26 +6,16 @@ class QuestionList
 
     public function fuzzySearch($input)
     {
-
-        foreach ($this->questionList as $question) {
-            if ($input != '' && strpos($question->questionContent, $input)) {
-                return $question;
+        $input = trim($input);
+        if($input != '') {
+            foreach ($this->questionList as $question) {
+                if (strpos($question->questionContent, $input)) {
+                    return $question;
+                }
             }
         }
         return false;
-
-        // $similar = 0;
-        // $output = null;
-
-        // foreach ($this->questionList as $question) {
-        //     similar_text($question, $input, $perc);
-        //     echo $perc;
-        //     if($perc > $similar) {
-        //         $similar = $perc;
-        //         $output = $question;
-        //     }
-        // }
-        // return $output === null || $similar === 0 ? "Không tìm thấy" : $output ;
+        
     }
 
     public function parse($path)
@@ -73,8 +63,9 @@ class QuestionList
 
     public function all()
     {
+        $result = '' ;
         foreach ($this->questionList as $question) {
-            $question->showQuestion();
+            $result .= $question;
         }
     }
 

@@ -24,11 +24,8 @@ class Question
         $this->answer = $answer;
     }
 
-    public function showQuestion() {
-        $Parsedown = new Parsedown();
-        echo $Parsedown->text($this->questionContent);
-        echo $Parsedown->text($this->answer);
-        echo $Parsedown->text("---");
+    public function __toString() {
+        return $this->questionContent . $this->answer . "\n---";
     }
 
 }

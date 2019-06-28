@@ -6,11 +6,13 @@ include "./QuestionList.php";
 $QList = new QuestionList();
 
 $QList->parse("question.md");
-// $QList->all();
 
-$question = $QList->fuzzySearch("Ouput là gì");
+$Parsedown = new Parsedown();
+echo $Parsedown->text($QList->all());
+
+$question = $QList->fuzzySearch("sessionStorage");
 if($question != false) {
-    $question->showQuestion();
+    echo $Parsedown->text($question);
 }
 else {
     echo "Không tìm thấy :D";
