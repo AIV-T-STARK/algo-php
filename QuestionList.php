@@ -4,25 +4,15 @@ class QuestionList
 {
     private $questionList = [];
 
-    public function __get($name)
-    {
-        return $this->$name;
-    }
-
-    public function __set($name, $value)
-    {
-        $this->$name = $value;
-    }
-
     public function fuzzySearch($input)
     {
 
         foreach ($this->questionList as $question) {
             if ($input != '' && strpos($question->questionContent, $input)) {
-                $question->showQuestion();
+                return $question;
             }
         }
-        echo 'Không tìm thấy :D';
+        return false;
 
         // $similar = 0;
         // $output = null;
@@ -83,7 +73,6 @@ class QuestionList
 
     public function all()
     {
-
         foreach ($this->questionList as $question) {
             $question->showQuestion();
         }
