@@ -1,0 +1,13 @@
+{
+    "name": "giahao9899/algo-php",
+    "authors": [
+        {
+            "name": "Nguyen Gia Hao",
+            "email": "giahao9899@gmail.com"
+        }
+    ],
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "fzaninotto/faker": "^1.8"
+    }
+}

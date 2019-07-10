@@ -67,6 +67,7 @@ class QuestionList
         foreach ($this->questionList as $question) {
             $result .= $question;
         }
+        return $result;
     }
 
     

@@ -25,7 +25,7 @@ class Question
     }
 
     public function __toString() {
-        return $this->questionContent . $this->answer . "\n---";
+        return $this->questionContent . $this->answer . "\n---\n";
     }
 
 }
